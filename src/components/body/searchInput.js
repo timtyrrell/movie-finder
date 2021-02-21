@@ -1,3 +1,4 @@
+import {useState} from 'react';
 import {
   Button,
   Input,
@@ -7,16 +8,25 @@ import {
 import {SearchIcon} from '@chakra-ui/icons'
 
 export const SearchInput = () => {
+  const [inputValue, setInputValue] = useState("");
+
+  const inputChangeHandler = (e) => {
+    setInputValue(e.target.value)
+  };
+
+  const performSearch = () => {
+    console.log(inputValue)
+  };
+
   return (
     <>
       <InputGroup>
         <InputLeftElement
-          pointerEvents="none"
-          children={<SearchIcon/>}
+          children={<SearchIcon />}
         />
-        <Input placeholder="search show titles" />
+        <Input onChange={inputChangeHandler} placeholder="search show titles" value={inputValue} />
       </InputGroup>
-      <Button>Search</Button>
+      <Button onClick={performSearch}>Search</Button>
     </>
   )
 }
