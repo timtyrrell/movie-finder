@@ -1,12 +1,11 @@
-import {useContext} from 'react';
-import {
-  Text,
-} from '@chakra-ui/react';
-import SearchContext from '../../context/search-context'
+import { Text } from "@chakra-ui/react";
+import { useSearchContext } from "../../context/searchContext";
 
 export const SearchResults = () => {
-  const searchContext = useContext(SearchContext);
+  const searchContext = useSearchContext();
   return (
-    <Text>{searchContext.results}</Text>
-  )
-}
+    <>
+      <Text>{searchContext.results}</Text>
+    </>
+  );
+};
