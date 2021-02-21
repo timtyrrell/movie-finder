@@ -11,8 +11,17 @@ export const SearchInput = () => {
     setInputValue(e.target.value);
   };
 
-  const performSearch = () => {
-    searchContext.setResults(inputValue);
+  const performSearch = async () => {
+    try {
+      const response = await fetch(
+        `https://api.tvmaze.com/search/shows?q=${inputValue}`
+      ).then(res => res.json());
+
+      searchContext.setResults(response);
+    } catch (error) {
+      // TODO: set error state
+      console.log("error", error);
+    }
   };
 
   return (

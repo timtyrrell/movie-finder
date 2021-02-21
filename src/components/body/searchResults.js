@@ -1,11 +1,13 @@
-import { Text } from "@chakra-ui/react";
 import { useSearchContext } from "../../context/searchContext";
+import { SearchResult } from "./searchResult";
 
 export const SearchResults = () => {
   const searchContext = useSearchContext();
-  return (
-    <>
-      <Text>{searchContext.results}</Text>
-    </>
-  );
+
+  const renderResults = () => {
+    if (searchContext.results.length === 0) return [];
+    return searchContext.results.map(movie => <SearchResult movie={movie} />);
+  };
+
+  return <>{renderResults()}</>;
 };
