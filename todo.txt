@@ -1,0 +1,27 @@
+Success is:
+
+- The initial page will have a text input and button.
+- Successfully make the api call
+- Display the results in a view that is human readable
+
+Extra:
+- Tests
+- Interactions to click a show and get a list of episodes
+
+
+Components:
+
+layout
+  header
+  body
+    search
+      input box with icon
+      button
+    results
+      list of results
+
+TODO:
+context
+children based on context
+proptypes?
+error states?
