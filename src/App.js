@@ -1,19 +1,20 @@
 import React from 'react';
 import {
   Box,
-  Text,
   VStack,
   Grid,
 } from '@chakra-ui/react';
+
+import {Header} from './components/header'
+import {Body} from "./components/body";
 
 function App() {
   return (
     <Box textAlign="center" fontSize="xl">
       <Grid minH="100vh" p={3}>
         <VStack spacing={8}>
-          <Text>
-            Hello World
-          </Text>
+          <Header />
+          <Body />
         </VStack>
       </Grid>
     </Box>
